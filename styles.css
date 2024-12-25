@@ -1,0 +1,110 @@
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(media/sapin.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+
+.joyeux {
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Great Vibes', cursive;
+    font-size: 2em;
+    animation: slideDown 1s ease-out; /* Reduced to 1s */
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Great Vibes', cursive;
+    font-size: 1em;
+    margin-right: 4%;
+    margin-left: 4%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .15em solid orange; /* Curseur */
+    animation: typing 3.5s steps(40, end) 1s, blink-caret .75s step-end infinite 1s; /* Delay animation by 1s */
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: orange; }
+}
+
+span {
+    color: red;
+    font-family: 'Great Vibes', cursive;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 658px) {
+    .message {
+        font-size: 0.8em; /* Adjust font size */
+        white-space: normal; /* Allow text to wrap */
+    }
+    .joyeux {
+        font-size: 1.5em; /* Adjust font size */
+    }
+}
+
+.bouton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20%;
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 1s ease-in-out 5.5s forwards; /* Delay animation by 5.5s */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.btn {
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+    border: none;
+    animation: vibrate 0.3s infinite;
+}
+
+@keyframes vibrate {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-1px); } /* Reduced distance */
+    50% { transform: translateX(1px); }  /* Reduced distance */
+    75% { transform: translateX(-1px); } /* Reduced distance */
+    100% { transform: translateX(0); }
+}
